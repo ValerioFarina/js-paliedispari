@@ -1,9 +1,9 @@
 /*  CONSEGNA: scrivere una (o più di una) funzione per simulare il gioco di pari e dispari tra l'utente e il computer.
-             L'utente sceglie un numero tra 1 e 5 e sceglie "pari" o "dispari".
-             Il computer genera un secondo numero casuale tra 1 e 5.
-             Per vedere chi dei due vince, si deve fare la somma dei numeri dell'utente e del computer e stabilire se il risultato è pari o dispari.
-             Ad esempio, l'utente inserisce il numero 1 e indica come scelta "pari"; il computer genera casualmente il numero 3.
-             In questo caso ha vinto l'utente (perché 1+3 = 4, che è pari)  */
+              L'utente sceglie un numero tra 1 e 5 e sceglie "pari" o "dispari".
+              Il computer genera un secondo numero casuale tra 1 e 5.
+              Per vedere chi dei due vince, si deve fare la somma dei numeri dell'utente e del computer e stabilire se il risultato è pari o dispari.
+              Ad esempio, l'utente inserisce il numero 1 e indica come scelta "pari"; il computer genera casualmente il numero 3.
+              In questo caso ha vinto l'utente (perché 1+3 = 4, che è pari)  */
 
 
 // Fisso gli estremi del range entro il quale dovrebbero essere compresi i numeri dell'utente e del computer
@@ -24,7 +24,8 @@ do {
     //  Continuo a chiederglielo fintanto che l'input inserito non è nè "pari" nè "dispari"
 } while (userChoice != 'pari' && userChoice != 'dispari');
 
-// Simulo il gioco di pari e dispari tra l'utente e il computer invocando la funzione evenOddGame e passandole come argomenti i due input inseriti dall'utente
+/*  Simulo il gioco di pari e dispari tra l'utente e il computer invocando la funzione evenOddGame
+    e passandole come argomenti inf, sup e i due input inseriti dall'utente  */
 evenOddGame(inf, sup, userNumber, userChoice);
 
 
@@ -40,7 +41,7 @@ function getRndInteger(min, max) {
 
 // Definisco una funzione per stabilire se un numero è pari oppure dispari
 function isEven(number) {
-    if (number % 2 ==0) {
+    if (number % 2 == 0) {
         return true;
     } else {
         return false;
