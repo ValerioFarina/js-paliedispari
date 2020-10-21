@@ -6,16 +6,22 @@
              In questo caso ha vinto l'utente (perché 1+3 = 4, che è pari) */
 
 
-// Chiedo all'utente di inserire un numero da 1 a 5
-var userNumber = parseInt(prompt('Inserisci un numero da 1 a 5'));
+do {
+    // Chiedo all'utente di inserire un numero da 1 a 5
+    var userNumber = parseInt(prompt('Inserisci un numero da 1 a 5'));
+/* Continuo a chiederglielo fintanto che l'input inserito
+   o non è un numero,
+   oppure è un numero, ma non è compreso tra 1 e 5 */
+} while (isNaN(userNumber) || userNumber<1 || userNumber>5);
 
-// Chiedo all'utente di inserire "pari" o "dispari"
-var userChoice = prompt('Scegli tra pari e dispari');
+do {
+    // Chiedo all'utente di inserire "pari" o "dispari" (l'input viene direttamente trasformato in lower-case)
+    var userChoice = prompt('Scegli tra pari e dispari').toLowerCase();
+// Continuo a chiederglielo fintanto che l'input inserito non è nè "pari" nè "dispari"
+} while (userChoice != 'pari' && userChoice != 'dispari');
 
-// Simulo il gioco di pari e dispari tra l'utente e il computer invocando la funzione evenOddGame e passandogli come argomenti i due input inseriti dall'utente
+// Simulo il gioco di pari e dispari tra l'utente e il computer invocando la funzione evenOddGame e passandole come argomenti i due input inseriti dall'utente
 evenOddGame(userNumber, userChoice);
-
-
 
 // ********** LE MIE FUNZIONI **********
 
