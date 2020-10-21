@@ -15,11 +15,11 @@ function isPalindrome(word) {
         (cioè, corrispondente alla posizione occupata dall'ultimo carattere) */
     var lastPosition = word.length - 1;
     for (var i=0; i<middle; i++) {
-    /*  - Confronto il primo carattere di word (cioè, word[0]) con l'ultimo (cioè, word[lastPosition - 1 - 0]).
+    /*  - Confronto il primo carattere di word (cioè, word[0]) con l'ultimo (cioè, word[lastPosition - 0]).
           Se sono diversi, ritorno falso e esco dalla funzione.
-        - Confronto il secondo carattere di word (cioè, word[1]) con il penultimo (cioè, word[lastPosition - 1 - 1]).
+        - Confronto il secondo carattere di word (cioè, word[1]) con il penultimo (cioè, word[lastPosition - 1]).
           Se sono diversi, ritorno falso e esco dalla funzione.
-        - Confronto il terzo carattere di word (cioè, word[2]) con il terzultimo (cioè, word[lastPosition - 1 - 2]).
+        - Confronto il terzo carattere di word (cioè, word[2]) con il terzultimo (cioè, word[lastPosition - 2]).
           Se sono diversi, ritorno falso e esco dalla funzione.
           etc......  */
         if (word[i] != word[lastPosition - i]) {
