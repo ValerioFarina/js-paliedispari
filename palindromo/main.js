@@ -1,5 +1,5 @@
 /* CONSEGNA: scrivere una funzione per valutare se una parola è palindroma oppure no
-(una parola è palindroma se la posso leggere nello stesso modo dall'inizio alla fine e viceversa, ad esempio "anna" è palindroma, "andrea" no) */
+             (una parola è palindroma se la posso leggere nello stesso modo dall'inizio alla fine e viceversa, ad esempio "anna" è palindroma, "andrea" no) */
 
 
 /* Dichiaro una funzione isPalindrome per valutare se una parola è palindroma oppure no.
