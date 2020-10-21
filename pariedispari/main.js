@@ -8,11 +8,14 @@
 
 // Chiedo all'utente di inserire un numero da 1 a 5
 var userNumber = parseInt(prompt('Inserisci un numero da 1 a 5'));
-console.log(userNumber);
 
 // Chiedo all'utente di inserire "pari" o "dispari"
 var userChoice = prompt('Scegli tra pari e dispari');
-console.log(userChoice);
+
+// Simulo il gioco di pari e dispari tra l'utente e il computer invocando la funzione evenOddGame e passandogli come argomenti i due input inseriti dall'utente
+evenOddGame(userNumber, userChoice);
+
+
 
 // ********** LE MIE FUNZIONI **********
 
@@ -33,4 +36,34 @@ function isEven(number) {
 // Definisco una funzione che prende in input due numeri e restituisce la loro somma
 function sum(num1, num2) {
     return num1 + num2;
+}
+
+/* Definisco una funzione per simulare il gioco di pari e dispari tra utente e computer.
+   Questa funzione ha due parametri:
+    - number, che dovrebbe essere un numero
+    - evenOrOdd, che dovrebbe essere o la stringa "pari" o la stringa "dispari"
+   Entrambi i parametri dovrebbero essere inseriti come input dall'utente */
+function evenOddGame(number, evenOrOdd) {
+    // mostro in console le scelte dell'utente
+    console.log('Utente: ' + number + ', ' + evenOrOdd);
+    // genero un numero casuale compreso tra 1 e 5 che rappresenta il numero "scelto" dal computer
+    var randomNumber = getRndInteger(1, 5);
+    // mostro in console il numero del computer
+    console.log('Computer: ' + randomNumber);
+    if (evenOrOdd == 'pari') {
+        // se evenOrOdd è uguale a "pari", lo trasformo in un numero pari (per esmpio, 2)
+        evenOrOdd = 2;
+    } else {
+        // se evenOrOdd è uguale a "dispari", lo trasformo in un numero dispari (per esmpio, 1)
+        evenOrOdd = 1;
+    }
+    // calcolo la somma tra il numero dell'utente e quello del computer
+    var totalSum = sum(number, randomNumber);
+    if (isEven(evenOrOdd) == isEven(totalSum)) {
+        // se la somma e ciò che ha inserito l'utente concordano (enbtrambi pari o entrambi dispari) ha vinto l'utente
+        console.log('Ha vinto l\'utente');
+    } else {
+        // altrimenti ha vinto il computer
+        console.log('Ha vinto il computer');
+    }
 }
