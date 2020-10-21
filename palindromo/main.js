@@ -11,15 +11,18 @@ function isPalindrome(word) {
         - se word.length è pari, la stringa può essere divisa in due parti di uguale lunghezza, una di sx e una di dx,
           e in tal caso middle indicherà il punto in cui inizia la parte di dx  */
     var middle = Math.floor(word.length / 2);
+    /*  Salvo nella variabile lastPosition il numero corrispondente all'ultima posizione nella stringa word
+        (cioè, corrispondente alla posizione occupata dall'ultimo carattere) */
+    var lastPosition = word.length - 1;
     for (var i=0; i<middle; i++) {
-    /*  - Confronto il primo carattere di word (cioè, word[0]) con l'ultimo (cioè, word[word.length - 1 - 0]).
+    /*  - Confronto il primo carattere di word (cioè, word[0]) con l'ultimo (cioè, word[lastPosition - 1 - 0]).
           Se sono diversi, ritorno falso e esco dalla funzione.
-        - Confronto il secondo carattere di word (cioè, word[1]) con il penultimo (cioè, word[word.length - 1 - 1]).
+        - Confronto il secondo carattere di word (cioè, word[1]) con il penultimo (cioè, word[lastPosition - 1 - 1]).
           Se sono diversi, ritorno falso e esco dalla funzione.
-        - Confronto il terzo carattere di word (cioè, word[2]) con il terzultimo (cioè, word[word.length - 1 - 2]).
+        - Confronto il terzo carattere di word (cioè, word[2]) con il terzultimo (cioè, word[lastPosition - 1 - 2]).
           Se sono diversi, ritorno falso e esco dalla funzione.
           etc......  */
-        if (word[i] != word[word.length - 1 - i]) {
+        if (word[i] != word[lastPosition - i]) {
             return false;
         }
     }
