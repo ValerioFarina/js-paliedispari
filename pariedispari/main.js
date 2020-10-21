@@ -21,5 +21,8 @@ function isEven(number) {
     }
 }
 
-console.log(isEven(4));
-console.log(isEven(5));
+function sum(num1, num2) {
+    return num1 + num2;
+}
+
+console.log(sum(6,4));
