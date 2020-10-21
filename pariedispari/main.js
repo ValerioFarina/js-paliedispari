@@ -6,6 +6,15 @@
              In questo caso ha vinto l'utente (perché 1+3 = 4, che è pari) */
 
 
+// Chiedo all'utente di inserire un numero da 1 a 5
+var userNumber = parseInt(prompt('Inserisci un numero da 1 a 5'));
+console.log(userNumber);
+
+// Chiedo all'utente di inserire "pari" o "dispari"
+var userChoice = prompt('Scegli tra pari e dispari');
+console.log(userChoice);
+
+// ********** LE MIE FUNZIONI **********
 
 // Definisco una funzione che genera un numero intero random compreso tra min e max
 function getRndInteger(min, max) {
@@ -21,8 +30,7 @@ function isEven(number) {
     }
 }
 
+// Definisco una funzione che prende in input due numeri e restituisce la loro somma
 function sum(num1, num2) {
     return num1 + num2;
 }
-
-console.log(sum(6,4));
