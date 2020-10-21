@@ -6,22 +6,30 @@
              In questo caso ha vinto l'utente (perché 1+3 = 4, che è pari) */
 
 
+// Fisso gli estremi del range entro il quale dovrebbero essere compresi i numeri dell'utente e del computer
+var inf = 1;
+var sup = 5;
+
 do {
     // Chiedo all'utente di inserire un numero da 1 a 5
-    var userNumber = parseInt(prompt('Inserisci un numero da 1 a 5'));
-/* Continuo a chiederglielo fintanto che l'input inserito
-   o non è un numero,
-   oppure è un numero, ma non è compreso tra 1 e 5 */
-} while (isNaN(userNumber) || userNumber<1 || userNumber>5);
+    var userNumber = parseInt(prompt('Inserisci un numero da ' + inf + ' a ' + sup));
+/*
+    Continuo a chiederglielo fintanto che l'input inserito
+    o non è un numero,
+    oppure è un numero, ma non è compreso tra 1 e 5
+*/
+} while (isNaN(userNumber) || userNumber < inf || userNumber > sup);
 
 do {
     // Chiedo all'utente di inserire "pari" o "dispari" (l'input viene direttamente trasformato in lower-case)
     var userChoice = prompt('Scegli tra pari e dispari').toLowerCase();
-// Continuo a chiederglielo fintanto che l'input inserito non è nè "pari" nè "dispari"
+//  Continuo a chiederglielo fintanto che l'input inserito non è nè "pari" nè "dispari"
 } while (userChoice != 'pari' && userChoice != 'dispari');
 
 // Simulo il gioco di pari e dispari tra l'utente e il computer invocando la funzione evenOddGame e passandole come argomenti i due input inseriti dall'utente
-evenOddGame(userNumber, userChoice);
+evenOddGame(inf, sup, userNumber, userChoice);
+
+
 
 // ********** LE MIE FUNZIONI **********
 
@@ -44,16 +52,18 @@ function sum(num1, num2) {
     return num1 + num2;
 }
 
-/* Definisco una funzione per simulare il gioco di pari e dispari tra utente e computer.
-   Questa funzione ha due parametri:
-    - number, che dovrebbe essere un numero
-    - evenOrOdd, che dovrebbe essere o la stringa "pari" o la stringa "dispari"
-   Entrambi i parametri dovrebbero essere inseriti come input dall'utente */
-function evenOddGame(number, evenOrOdd) {
+/*
+    Definisco una funzione per simulare il gioco di pari e dispari tra utente e computer.
+    Questa funzione ha quattro parametri:
+        - inf e sup, che indicano gli estremi (inferiore e superiore, rispettivamente) del range dal quale il computer deve "segliere" il numero;
+        - number, che indica il numero inserito dall'utente (anche questo dovrebbe essere compreso tra inf e sup);
+        - evenOrOdd, che dovrebbe essere o la stringa "pari" o la stringa "dispari" inserita dall'utente.
+*/
+function evenOddGame(inf, sup, number, evenOrOdd) {
     // mostro in console le scelte dell'utente
     console.log('Utente: ' + number + ', ' + evenOrOdd);
-    // genero un numero casuale compreso tra 1 e 5 che rappresenta il numero "scelto" dal computer
-    var randomNumber = getRndInteger(1, 5);
+    // genero un numero casuale compreso tra inf e sup che rappresenta il numero "scelto" dal computer
+    var randomNumber = getRndInteger(inf, sup);
     // mostro in console il numero del computer
     console.log('Computer: ' + randomNumber);
     if (evenOrOdd == 'pari') {
