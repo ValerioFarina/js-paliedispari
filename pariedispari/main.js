@@ -12,4 +12,14 @@ function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
-console.log(getRndInteger(1, 5))
+// Definisco una funzione per stabilire se un numero è pari oppure dispari
+function isEven(number) {
+    if (number % 2 ==0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log(isEven(4));
+console.log(isEven(5));
